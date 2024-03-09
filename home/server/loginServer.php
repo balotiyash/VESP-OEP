@@ -103,6 +103,7 @@ class ValidateLogin {
                     if (password_verify($password, $storedPassword)) {
                         session_start();
                         $_SESSION["adminSession"] = $staffName;
+                        $_SESSION["adminEmail"] = $username;
                         echo  "Verified Admin";
                     } else {
                         echo "Invalid";

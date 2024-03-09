@@ -2,12 +2,19 @@
     $existPass = $_POST["existingPassword"];
     $cnfPass = $_POST["confirmPassword"];
     session_start();
-    $staffEmail = $_SESSION["staffEmail"];
+    // $staffEmail = $_SESSION["staffEmail"];
+    $staffEmail = null;
     $staffPass = null;
+
+    if (isset($_SESSION["staffEmail"])) {
+        $staffEmail = $_SESSION["staffEmail"];
+    } else if (isset($_SESSION["adminEmail"])) {
+        $staffEmail = $_SESSION["adminEmail"];
+    }
 
     if (isset($staffEmail)) {
         if (isset($existPass) && isset($cnfPass)) {
-            require_once "../../shared/server/connection.php";
+            require_once "connection.php";
 
             // Hash the password
             $hashedPassword = password_hash($cnfPass, PASSWORD_DEFAULT);

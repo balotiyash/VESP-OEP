@@ -94,7 +94,7 @@ function changeStaffPassword() {
             }
         }
     };
-    xhr.open("POST", "../server/changePasswordServer.php");
+    xhr.open("POST", "../../shared/server/changePasswordServer.php");
     xhr.send(formData);
 
     return false;
