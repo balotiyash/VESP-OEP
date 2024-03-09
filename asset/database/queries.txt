@@ -1,0 +1,231 @@
+DROP TABLE fy_ao_students;
+DROP TABLE fy_ce_students;
+DROP TABLE fy_co_students;
+DROP TABLE fy_ee_students;
+DROP TABLE fy_ej_students;
+DROP TABLE fy_me_students;
+
+DROP TABLE sy_ao_students;
+DROP TABLE sy_ce_students;
+DROP TABLE sy_co_students;
+DROP TABLE sy_ee_students;
+DROP TABLE sy_ej_students;
+DROP TABLE sy_me_students;
+
+DROP TABLE ty_ao_students;
+DROP TABLE ty_ce_students;
+DROP TABLE ty_co_students;
+DROP TABLE ty_ee_students;
+DROP TABLE ty_ej_students;
+DROP TABLE ty_me_students;
+
+CREATE TABLE ty_ao_students (
+    enrollment_no NUMERIC(25),
+    roll_no VARCHAR(10) NOT NULL,
+    student_name VARCHAR(50) NOT NULL,
+    PRIMARY KEY (enrollment_no)
+);
+
+CREATE TABLE ty_ce_students (
+    enrollment_no NUMERIC(25),
+    roll_no VARCHAR(10) NOT NULL,
+    student_name VARCHAR(50) NOT NULL,
+    PRIMARY KEY (enrollment_no)
+);
+
+CREATE TABLE ty_co_students (
+    enrollment_no NUMERIC(25),
+    roll_no VARCHAR(10) NOT NULL,
+    student_name VARCHAR(50) NOT NULL,
+    PRIMARY KEY (enrollment_no)
+);
+
+CREATE TABLE ty_ee_students (
+    enrollment_no NUMERIC(25),
+    roll_no VARCHAR(10) NOT NULL,
+    student_name VARCHAR(50) NOT NULL,
+    PRIMARY KEY (enrollment_no)
+);
+
+CREATE TABLE ty_ej_students (
+    enrollment_no NUMERIC(25),
+    roll_no VARCHAR(10) NOT NULL,
+    student_name VARCHAR(50) NOT NULL,
+    PRIMARY KEY (enrollment_no)
+);
+
+CREATE TABLE ty_me_students (
+    enrollment_no NUMERIC(25),
+    roll_no VARCHAR(10) NOT NULL,
+    student_name VARCHAR(50) NOT NULL,
+    PRIMARY KEY (enrollment_no)
+);
+
+CREATE VIEW student_details AS
+SELECT * FROM fy_ao_students
+UNION ALL
+SELECT * FROM fy_ce_students
+UNION ALL
+SELECT * FROM fy_co_students
+UNION ALL
+SELECT * FROM fy_ee_students
+UNION ALL
+SELECT * FROM fy_ej_students
+UNION ALL
+SELECT * FROM fy_me_students
+UNION ALL
+SELECT * FROM sy_ao_students
+UNION ALL
+SELECT * FROM sy_ce_students
+UNION ALL
+SELECT * FROM sy_co_students
+UNION ALL
+SELECT * FROM sy_ee_students
+UNION ALL
+SELECT * FROM sy_ej_students
+UNION ALL
+SELECT * FROM sy_me_students
+UNION ALL
+SELECT * FROM ty_ao_students
+UNION ALL
+SELECT * FROM ty_ce_students
+UNION ALL
+SELECT * FROM ty_co_students
+UNION ALL
+SELECT * FROM ty_ee_students
+UNION ALL
+SELECT * FROM ty_ej_students
+UNION ALL
+SELECT * FROM ty_me_students;
+
+CREATE TABLE ct_qb_mgt (
+	sr_no VARCHAR(5),
+    co_map VARCHAR(5),
+    question VARCHAR(500),
+    option_a VARCHAR(500),
+    option_b VARCHAR(500),
+    option_c VARCHAR(500),
+    option_d VARCHAR(500),
+    correct_answer VARCHAR(5)
+);
+
+CREATE TABLE ct_qb_est (
+	sr_no VARCHAR(5),
+    co_map VARCHAR(5),
+    question VARCHAR(500),
+    option_a VARCHAR(500),
+    option_b VARCHAR(500),
+    option_c VARCHAR(500),
+    option_d VARCHAR(500),
+    correct_answer VARCHAR(5)
+);
+
+CREATE TABLE ct_qb_bsc (
+	sr_no VARCHAR(5),
+    co_map VARCHAR(5),
+    question VARCHAR(500),
+    option_a VARCHAR(500),
+    option_b VARCHAR(500),
+    option_c VARCHAR(500),
+    option_d VARCHAR(500),
+    correct_answer VARCHAR(5)
+);
+
+CREATE TABLE ct_qb_asc (
+	sr_no VARCHAR(5),
+    co_map VARCHAR(5),
+    question VARCHAR(500),
+    option_a VARCHAR(500),
+    option_b VARCHAR(500),
+    option_c VARCHAR(500),
+    option_d VARCHAR(500),
+    correct_answer VARCHAR(5)
+);
+
+CREATE TABLE ct_qb_bee (
+	sr_no VARCHAR(5),
+    co_map VARCHAR(5),
+    question VARCHAR(500),
+    option_a VARCHAR(500),
+    option_b VARCHAR(500),
+    option_c VARCHAR(500),
+    option_d VARCHAR(500),
+    correct_answer VARCHAR(5)
+);
+
+CREATE TABLE ct_qb_mem (
+	sr_no VARCHAR(5),
+    co_map VARCHAR(5),
+    question VARCHAR(500),
+    option_a VARCHAR(500),
+    option_b VARCHAR(500),
+    option_c VARCHAR(500),
+    option_d VARCHAR(500),
+    correct_answer VARCHAR(5)
+);
+
+CREATE TABLE ct_qb_ajp (
+	sr_no VARCHAR(5),
+    co_map VARCHAR(5),
+    question VARCHAR(500),
+    option_a VARCHAR(500),
+    option_b VARCHAR(500),
+    option_c VARCHAR(500),
+    option_d VARCHAR(500),
+    correct_answer VARCHAR(5)
+);
+
+CREATE TABLE ct_qb_ete (
+	sr_no VARCHAR(5),
+    co_map VARCHAR(5),
+    question VARCHAR(500),
+    option_a VARCHAR(500),
+    option_b VARCHAR(500),
+    option_c VARCHAR(500),
+    option_d VARCHAR(500),
+    correct_answer VARCHAR(5)
+);
+
+CREATE TABLE ct_qb_etee (
+	sr_no VARCHAR(5),
+    co_map VARCHAR(5),
+    question VARCHAR(500),
+    option_a VARCHAR(500),
+    option_b VARCHAR(500),
+    option_c VARCHAR(500),
+    option_d VARCHAR(500),
+    correct_answer VARCHAR(5)
+);
+
+CREATE TABLE ct_qb_etc (
+	sr_no VARCHAR(5),
+    co_map VARCHAR(5),
+    question VARCHAR(500),
+    option_a VARCHAR(500),
+    option_b VARCHAR(500),
+    option_c VARCHAR(500),
+    option_d VARCHAR(500),
+    correct_answer VARCHAR(5)
+);
+
+CREATE TABLE ct_qb_eti (
+	sr_no VARCHAR(5),
+    co_map VARCHAR(5),
+    question VARCHAR(500),
+    option_a VARCHAR(500),
+    option_b VARCHAR(500),
+    option_c VARCHAR(500),
+    option_d VARCHAR(500),
+    correct_answer VARCHAR(5)
+);
+
+CREATE TABLE ct_qb_etm (
+	sr_no VARCHAR(5),
+    co_map VARCHAR(5),
+    question VARCHAR(500),
+    option_a VARCHAR(500),
+    option_b VARCHAR(500),
+    option_c VARCHAR(500),
+    option_d VARCHAR(500),
+    correct_answer VARCHAR(5)
+);

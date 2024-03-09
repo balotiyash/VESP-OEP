@@ -1,0 +1,38 @@
+/* 
+    VES Brown color: #6d4c41;
+    VES Dark Yellow color: #ffc107;
+    VES Light Yellow color: #feefcd;
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f7f7f9;
+}
+
+#homePage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+    /* Ensure full viewport height */
+    padding-top: 10vh;
+}
+
+#onlineExamImg {
+    width: 75vh;
+}
+
+footer {
+    position: fixed;
+    background-color: #6d4c41;
+    color: #feefcd;
+    width: 100vw;
+    bottom: 0;
+    font-size: 1vw;
+}

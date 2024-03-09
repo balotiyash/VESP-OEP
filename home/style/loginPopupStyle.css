@@ -1,0 +1,136 @@
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black */
+    z-index: 100;
+    /* Ensure it's above other content */
+    display: none;
+    /* Hide by default */
+}
+
+#newDetailsPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    /* Background color of the popup */
+    padding: 20px;
+    border-radius: 15px;
+    z-index: 101;
+    /* Ensure it's above the overlay */
+    display: none;
+    /* Hide by default */
+    width: 50vw;
+    /* height: 15vw; */
+}
+
+#vespLogin {
+    width: 10vw;
+}
+
+#popupHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+#close {
+    cursor: pointer;
+    /* font-size: 25px; */
+    font-size: 1.5vw;
+}
+
+#insideWelcome {
+    text-align: center;
+    /* margin-top: 1vw; */
+    margin-bottom: 1vw;
+    line-height: 4vh;
+    font-size: 1.1vw;
+}
+
+#oepText {
+    color: gray;
+    /* font-size: ; */
+}
+
+#loginAs {
+    /* font-size: large; */
+    font-size: 1.5vw;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+#roleDiv {
+    display: flex;
+    justify-content: space-around;
+}
+
+.role {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 10vw;
+    border: 1px solid #ffc107;
+    padding: 1vw;
+    border-radius: 1vw;
+    cursor: pointer;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    /* Apply backdrop filter effect */
+    background-color: rgba(255, 255, 255, 0);
+    /* Fallback background color for browsers that don't support backdrop-filter */
+    font-size: 1vw;
+}
+
+/* .role:hover { */
+/* background-color: #feefcd; */
+/* transition: 0.5s; */
+/* } */
+
+.role img {
+    transition: transform 0.3s ease;
+    /* Apply transition effect to the image */
+}
+
+.role:hover img {
+    transform: scale(1.1);
+    /* Scale up the image on hover */
+}
+
+.role p {
+    padding-top: 4px;
+}
+
+#devInfo {
+    text-align: center;
+    margin-top: 5vh;
+    font-size: 1vw;
+}
+
+.devName {
+    color: #6d4c41;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.passHideShow {
+    position: relative;
+}
+
+.passHideShow input[type="password"] {
+    padding-right: 30px;
+    /* Adjust padding to accommodate the icon */
+}
+
+.passHideShow .fa-eye-slash,
+.passHideShow .fa-eye {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}

@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f7f7f9;
+}
+
+#navBar {
+    z-index: 5;
+}
+
+#mainPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 6vw;
+}
+
+#collectInfo {
+    width: 90vw;
+    /* height: 50vh; */
+    background-color: white;
+    border: 3px  solid #ffc107;
+    border-radius: 50px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* padding: 1vh; */
+    font-size: 1vw;
+}
+
+#collectInfo label {
+    font-weight: bold;
+}
+
+#collectInfo .radioLabel {
+    font-weight: normal;
+}
+
+#viewResultBtn {
+    background-color: #ffc107;
+    color: black;
+    margin: 1vh;
+}
+
+.userInfoDiv input[type="number"],
+.userInfoDiv select,
+.userInfoDiv input[type="password"] {
+    /* margin-top: 5px; */
+    /* margin-top: 1vh; */
+    /* display: block; */
+    /* width: 100%; */
+    /* Make inputs fill the entire width of the form */
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    box-sizing: border-box;
+    /* Ensure padding is included in the width */
+    font-size: 1vw;
+    
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#noResultFound {
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+}
+
+#noResultFound span {
+    font-style: italic;
+
+}
+
+#noDataImg {
+    width: 45vw;
+}

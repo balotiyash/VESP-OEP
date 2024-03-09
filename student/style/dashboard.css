@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f7f7f9;
+}
+
+/* Navigation Bar */
+#navBarDiv {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    width: 100vw;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+}
+
+#vespLogo {
+    width: 12vw;
+    /* margin: 8px; */
+    margin: 0.5vw;
+}
+
+#studLogoutBtn {
+    /* margin: 8px; */
+    margin: 0.5vw;
+    /* margin-right: 24px; */
+    margin-right: 1.5vw;
+}
+
+#userDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#welcome {
+    margin: auto;
+    font-size: 1.1vw;
+    /* color: #6d4c41; */
+}
+
+#studentName {
+    font-weight: bold;
+    font-size: 1.5vw;
+}
+
+#homePage {
+    /* padding-top: 5%; */
+    padding-top: 5vw;
+    display: flex;
+}
+
+/* Right Panel */
+#mainPage {
+    width: 75%;
+    height: 85vh;
+    /* margin: auto; */
+    text-align: center;
+    color: gray;
+    font-size: 1vw;
+
+    display: flex;
+    position: fixed;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Footer */
+#warning {
+    position: fixed;
+    background-color: #6d4c41;
+    color: #feefcd;
+    width: 100vw;
+    bottom: 0;
+    font-size: 1vw;
+}
+
+@media screen and (max-width: 600px) {
+    #navBarDiv {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .auto-type {
+        font-size: 3vh;
+        text-align: center;
+    }
+
+    #userDiv {
+        display: none;
+    }
+
+    #navPanel {
+        width: 100%;
+        border: none;
+    }
+
+    #mainPage {
+        display: none;
+    }
+}

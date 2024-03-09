@@ -1,0 +1,73 @@
+footer {
+    position: fixed;
+    background-color: #6d4c41;
+    color: #feefcd;
+    width: 100vw;
+    bottom: 0;
+    font-size: 1vw;
+    text-align: center;
+    padding: 0.5vh;
+}
+
+footer a {
+    text-decoration: none;
+    color: #ffc107;
+}
+
+@keyframes colorTransition {
+    0% {
+        color: #ffc107;
+    }
+    50% {
+        color: #feefcd;
+    }
+    100% {
+        color: #ffc107;
+    }
+}
+
+@-webkit-keyframes colorTransition {
+    0% {
+        color: #ffc107;
+    }
+    50% {
+        color: #feefcd;
+    }
+    100% {
+        color: #ffc107;
+    }
+}
+
+@keyframes iconColorTransition {
+    0% {
+        color: red;
+    }
+    50% {
+        color: #feefcd;
+    }
+    100% {
+        color: red;
+    }
+}
+
+@-webkit-keyframes iconColorTransition {
+    0% {
+        color: red;
+    }
+    50% {
+        color: #feefcd;
+    }
+    100% {
+        color: red;
+    }
+}
+
+a.transition {
+    animation: colorTransition 2s infinite;
+    -webkit-animation: colorTransition 2s infinite;
+}
+
+i.icon-transition {
+    animation: iconColorTransition 2s infinite;
+    -webkit-animation: iconColorTransition 2s infinite;
+}

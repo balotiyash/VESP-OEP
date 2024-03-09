@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Complete Page */
+#mainContainer {
+    display: flex;
+    height: 100vh;
+}
+
+/* Q&A */
+#partTwo {
+    width: 60vw;
+    border: 2px solid black;
+    border-bottom: none;
+    border-top: none;
+}
+
+/* Part2 */
+#question {
+    width: 90%;
+    border: 2px solid #ffc107;
+    border-radius: 10px;
+    background-color: #feefcd;
+    margin: 10px auto;
+    padding: 10px;
+    line-height: 3.5vh;
+    font-size: 1.1vw;
+}
+
+#ans {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 25px;
+    line-height: 2.5vw;
+    font-size: 1.1vw;
+}
+
+#warning {
+    position: fixed;
+    background-color: #6d4c41;
+    color: #feefcd;
+    width: 100vw;
+    bottom: 0;
+    font-size: 1vw;
+}
+
+#orientationMessage {
+    display: none;
+    text-align: center;
+}
+
+input [type="checkbox"] {
+    /* font-size: 1vw; */
+    width: 10vw;
+}

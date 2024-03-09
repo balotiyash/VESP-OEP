@@ -1,0 +1,105 @@
+<!-- Home Page Login Form -->
+<div id="studLoginDiv" class="loginForm">
+    
+    <!-- Login Form College Information -->
+    <div class="infoDiv">
+        <h1 class="vespText">VES Polytechnic's</h1>
+        <p class="oepText">Online Examination Portal</p>
+        <img src="asset/images/VES-logo.png" alt="VES Logo" class="vesLogo">
+        <p class="loginTxt">Student Login</p>
+    </div>
+
+    <div class="loginDiv">
+        <!-- Student Login Form -->
+        <form action="home/server/loginServer.php" method="post" onsubmit="return fetchStudentName()" class="form" id="studentLoginForm">
+            <div class="form-element">
+                <label for="enrollNo">Enrollment Number</label>
+                <input type="number" name="enrollmentNo" id="enrollNo" placeholder="Enter Enrollment No." autocomplete="off" required>
+            </div>
+            <div class="form-element">
+                <label for="studNameTxt">Student Name</label>
+                <input type="text" placeholder="Student Name" id="studNameTxt" disabled>
+            </div>
+            <div class="form-element">
+                <label for="confirmNameTxt">Your Name</label>
+                <input type="text" id="confirmNameTxt" placeholder="Enter Your Name" autocomplete="off"
+                    disabled required>
+            </div>
+            <div class="form-element forgotDiv">
+                <button type="submit" class="button-17" role="button" id="fetchBtnLogin">Fetch Student Name</button>
+                <button type="button" class="button-17" role="button" id="studBtnLogin" onclick="verifyStudent()">Log in</button>
+                <label for="">Change or Reset Details:</label>
+                <a href="javascript: resetLoginForm()" style="color: blue;">Click here</a>
+                <!-- <button id="loginBtn">Fetch Student Name</button> -->
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Staff Login -->
+<div id="staffLoginDiv" class="loginForm" hidden>
+    <div class="infoDiv">
+        <h1 class="vespText">VES Polytechnic's</h1>
+        <p class="oepText">Online Examination Portal</p>
+        <img src="asset/images/VES-logo.png" alt="VES Logo" class="vesLogo">
+        <p class="loginTxt">Staff Login</p>
+    </div>
+
+    <div class="loginDiv">
+        <form action="home/server/loginServer.php" method="post" onsubmit="return verifyStaff()" class="form" id="staffLoginForm">
+            <div class="form-element">
+                <label for="staffUnameTxt">E-mail ID</label>
+                <input type="text" id="staffUnameTxt" placeholder="Enter your E-mail ID" autocomplete="off" required>
+            </div>
+            <div class="form-element">
+                <label for="staffPassword">Password</label>
+                <div class="passHideShow">
+                    <input type="password" id="staffPassword" placeholder="Enter your Password" autocomplete="off" required>
+                    <i class="fa-solid fa-eye" id="togglePassword" onclick="hideShowPassword('staff')"></i>
+                </div>
+            </div>
+            
+            <div class="form-element">
+                <button type="submit" class="button-17" role="button" id="staffBtnLogin">Sign in</button>
+                <!-- <button id="loginBtn">Sign in</button> -->
+            </div>
+
+            <div class="forgotDiv">
+                <p class="forgot">Change/Forgot Password? </p><a href="shared/view/resetPassword.php" style="color: blue;">Click Here</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Admin Login -->
+<div id="adminLoginDiv" class="loginForm" hidden>
+    <div class="infoDiv">
+        <h1 class="vespText">VES Polytechnic's</h1>
+        <p class="oepText">Online Examination Portal</p>
+        <img src="asset/images/VES-logo.png" alt="VES Logo" class="vesLogo">
+        <p class="loginTxt">Admin Login</p>
+    </div>
+
+    <div class="loginDiv">
+        <form action="home/server/loginServer.php" method="post" onsubmit="return verifyAdmin()" class="form" id="adminLoginForm">
+            <div class="form-element">
+                <label for="adminUnameTxt">Username</label>
+                <input type="text" id="adminUnameTxt" placeholder="Enter your Username" autocomplete="off">
+            </div>
+            <div class="form-element">
+                <label for="adminPassword">Password</label>
+                <div class="passHideShow">
+                    <input type="password" id="adminPassword" placeholder="Enter your Password" autocomplete="off">
+                    <i class="fa-solid fa-eye" id="togglePasswordAdmin" onclick="hideShowPassword('admin')"></i>
+                </div>
+            </div>
+            <div class="form-element">
+                <button type="submit" class="button-17" role="button" id="adminBtnLogin">Sign in</button>
+                <!-- <button id="loginBtn">Sign in</button> -->
+            </div>
+            <div class="forgotDiv">
+                <p class="forgot">Change/Forgot Password? </p><a href="shared/view/resetPassword.php" style="color: blue;">Click Here</a>
+            </div>
+        </form>
+    </div>
+</div>

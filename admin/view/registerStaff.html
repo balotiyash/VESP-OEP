@@ -1,0 +1,39 @@
+<div id="regStaffParentDiv">
+    <h3>Register New Staff</h3>
+
+    <div id="regStaffChildDiv">
+        <img src="../../asset/images/Register.svg" alt="" id="registerImg">
+
+        <form onsubmit="return registerStaff()" id="regStaffFormDiv">
+            <div>
+                <label for="staffFnameTxt">First Name</label>
+                <input type="text" id="staffFnameTxt" placeholder="Enter First Name" required autocomplete="off">
+            </div>
+
+            <div>
+                <label for="staffLnameTxt">Last Name</label>
+                <input type="text" id="staffLnameTxt" placeholder="Enter Last Name" required autocomplete="off">
+            </div>
+            
+            <div>
+                <label for="selStaffDept">Department</label>
+                <select id="selStaffDept" required>
+                    <option value="" disabled selected>Select Department</option>
+                    <option value="ao">Automation & Robotics</option>
+                    <option value="ce">Civil Engineering</option>
+                    <option value="co">Computer Engineering</option>
+                    <option value="ee">Electrical Engineering</option>
+                    <option value="ej">Electronic Engineering</option>
+                    <option value="me">Mechanical Engineering</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+
+            <!-- <div>
+                <label for="staffEmail">E-mail ID</label>
+                <input type="text" id="staffEmail" placeholder="Enter E-mail ID" required autocomplete="off">
+            </div> -->
+            <button type="submit" class="button-17" id="addStaffBtn">Register Staff</button>
+        </form>
+    </div>
+</div>

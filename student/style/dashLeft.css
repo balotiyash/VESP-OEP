@@ -1,0 +1,57 @@
+/* Left Panel */
+#navPanel {
+    width: 25vw;
+    /* height: 50%; */
+    max-height: 90vh;
+    border-right: 1px solid black;
+    margin: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+
+    position: fixed;
+    left: 0;
+}
+
+.subjectBtn {
+    display: block;
+    width: 98%;
+    height: 4.8vh;
+    border: none;
+    background-color: #feefcd;
+    transition: 0.5s;
+    border: 1px solid #ffdf96;
+    font-size: 2vh;
+    /* font-size: 1vw; */
+    text-align: left;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.subjectBtn:hover {
+    background-color: #ffdf96;
+}
+
+#mgtBtn, #eteBtn, #ascBtn {
+    border-radius: 10px 10px 0px 0px;
+}
+
+#estBtn, #etmBtn, #beeBtn {
+    border-radius: 0px 0px 10px 10px;
+}
+
+#bscBtn, #memBtn, #ajpBtn {
+    border-radius: 10px;
+}
+
+#etmBtn {
+    margin-bottom: 25px;
+}
+
+.allSem {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 2vh;
+    /* font-size: 1.15vw; */
+    font-weight: bold;
+}

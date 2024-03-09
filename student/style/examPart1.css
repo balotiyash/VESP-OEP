@@ -1,0 +1,88 @@
+/* Profile, Tally, End */
+#partOne {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20vw;
+    height: 97vh;
+    /* border-bottom: 2px solid black; */
+    text-align: center;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+/* Part1 */
+#vesLogo {
+    width: 5vw;
+}
+
+#studName, #studId {
+    font-size: 2.2vh;
+    line-height: 4vh;
+}
+
+#tally {
+    /* width: 15vw; */
+    width: 78%;
+    background-color: white;
+    border: 3px solid #ffc107;
+    margin: auto;
+    margin-bottom: 15%;
+    border-radius: 15px;
+    font-size: 1.2vw;
+}
+
+#attempted, #pending, #review, #total {
+    width: 13vw;
+    height: 2vw;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 15px;
+    padding: 0.8px;
+    line-height: 2vw;
+}
+
+#attempted {
+    background-color: #A1DD70;
+}
+
+#pending {
+    background-color: #FF8F8F;
+}
+
+#review {
+    background-color: #B4D4FF;
+}
+
+#total {
+    background-color: #ffc107;
+    margin-bottom: 10px;
+}
+
+#head1, #head2, #head3 {
+    margin: 10px;
+    font-size: 3vh;
+    color: #6d4c41;
+    line-height: 4vh;
+}
+
+#head3 {
+    color: black;
+}
+
+#endExamBtn {
+    width: 75%;
+    border: none;
+    outline: none;
+    font-size: 1.05vw;
+    background: red;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 2vh;
+    cursor: pointer;
+}
+
+#endExamBtn:hover {
+    font-size: 1.2vw;
+    transition: 0.5s ease;
+}

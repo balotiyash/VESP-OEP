@@ -1,0 +1,71 @@
+#uploadDiv {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+#studUploadHeader {
+    font-size: 1.5vw;
+    text-align: center;
+    /* margin: 2vh 0 2vh 0; */
+    margin: 1vw 0 0 0;
+    font-weight: 600;
+}
+
+#uploadStudDiv {
+    display: flex;
+}
+
+#uploadStudDiv img {
+    width: 20vw;
+}
+
+#uploadForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#uploadForm div label {
+    font-size: 1vw;
+    margin-bottom: 1vh;
+}
+
+#uploadForm {
+    /* height: 11vh; */
+    /* height: 100%; */
+}
+
+.mb-3 label {
+    font-size: 1vw;
+    margin-bottom: 1vh;
+}
+
+.mb-3 input {
+    width: 90%;
+    /* height: 2.5vw; */
+    padding: 0.3vw;
+    font-size: 1vw;
+    /* border-radius: 5px; */
+    /* border: 1px solid #aaa; */
+}
+
+#selYear, #fileChooser, #selectedSubject {
+    width: 90%;
+    height: 2.5vw;
+    padding: 0.3vw;
+    font-size: 1vw;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+}
+
+#fileBtn {
+    background-color: #ffc107;
+    color: black;
+    width: 90%;
+    /* height: 6vh; */
+}
+
+#excelFormatBtn {
+    width: 90%;
+}

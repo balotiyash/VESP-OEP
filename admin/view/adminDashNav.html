@@ -1,0 +1,77 @@
+<div class="navBarDiv">
+    <img src="../../asset/images/VESP Logo.png" alt="VES Polytechnic" id="vespLogo">
+
+    <div id="navBtns">
+        <button type="button" class="btn btn-light" onclick="window.location.href = 'adminDashboard.php'">Home</button>
+
+        <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle" type="button" id="" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                View Students List
+            </button>
+            <div class="dropdown-menu" aria-labelledby="">
+                <a class="dropdown-item" href="javascript: openStudentList('fy')">First Year</a>
+                <a class="dropdown-item" href="javascript: openStudentList('sy')">Second Year</a>
+                <a class="dropdown-item" href="javascript: openStudentList('ty')">Third Year</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle" type="button" id="uploadDropDown" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Upload CT Questions
+            </button>
+            <div class="dropdown-menu" aria-labelledby="">
+                <a class="dropdown-item" href="javascript: uploadQuestionsList('mgt')">MGT/MAN - Management</a>
+                <a class="dropdown-item" href="javascript: uploadQuestionsList('est')">EST - Environmental Studies</a>
+                <a class="dropdown-item" href="javascript: uploadQuestionsList('bsc')">BSC - Basic Science</a>
+                <a class="dropdown-item" href="javascript: uploadQuestionsList('asc')">ASC - Applied Science</a>
+                <a class="dropdown-item" href="javascript: uploadQuestionsList('bee')">BEE - Basic Electrical & Electronics Engineering</a>
+                <a class="dropdown-item" href="javascript: uploadQuestionsList('mem')">MEM - Mechanical Engineering Materials</a>
+                <a class="dropdown-item" href="javascript: uploadQuestionsList('ajp')">AJP - Advanced Java Programming</a>
+                <a class="dropdown-item" href="javascript: uploadQuestionsList('ete')">ETE - Emerging Trends in Electronics</a>
+                <a class="dropdown-item" href="javascript: uploadQuestionsList('etee')">ETE - Emerging Trends in Electrical Engineering</a>
+                <a class="dropdown-item" href="javascript: uploadQuestionsList('etc')">ETC - Emerging Trends in Civil Engineering</a>
+                <a class="dropdown-item" href="javascript: uploadQuestionsList('eti')">ETI - Emerging Trends in Computer & IT</a>
+                <a class="dropdown-item" href="javascript: uploadQuestionsList('etm')">ETM - Emerging Trends in Mechanical Engineering</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle" type="button" id="resultDropDown" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Download Result
+            </button>
+            <div class="dropdown-menu" aria-labelledby="">
+                <a class="dropdown-item" href="#">MGT/MAN - Management</a>
+                <a class="dropdown-item" href="#">EST - Environmental Studies</a>
+                <a class="dropdown-item" href="#">BSC - Basic Science</a>
+                <a class="dropdown-item" href="#">ASC - Applied Science</a>
+                <a class="dropdown-item" href="#">BEE - Basic Electrical & Electronics Engineering</a>
+                <a class="dropdown-item" href="#">MEM - Mechanical Engineering Materials</a>
+                <a class="dropdown-item" href="#">AJP - Advanced Java Programming</a>
+                <a class="dropdown-item" href="#">ETE - Emerging Trends in Electronics</a>
+                <a class="dropdown-item" href="#">ETE - Emerging Trends in Electrical Engineering</a>
+                <a class="dropdown-item" href="#">ETC - Emerging Trends in Civil Engineering</a>
+                <a class="dropdown-item" href="#">ETI - Emerging Trends in Computer & IT</a>
+                <a class="dropdown-item" href="#">ETM - Emerging Trends in Mechanical Engineering</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle" type="button" id="moreDropDown" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                More
+            </button>
+            <div class="dropdown-menu" aria-labelledby="">
+                <a class="dropdown-item" href="#">Manage Subject</a>
+                <a class="dropdown-item" href="#">Manage Staff</a>
+                <a class="dropdown-item" href="javascript: openChangePassword()">Change Password</a>
+                <a class="dropdown-item" href="javascript: logout()">Sign out</a>
+                <!-- <a class="dropdown-item" href="#">Electrical Engineering</a> -->
+                <!-- <a class="dropdown-item" href="#">Electronics & Tele-Com. Engineering</a> -->
+                <!-- <a class="dropdown-item" href="#">Mechanical Engineering</a> -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+#mapParentDiv {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+#mapCOHeader {
+    font-size: 1.5vw;
+    text-align: center;
+    /* margin: 2vh 0 2vh 0; */
+    margin: 1vw 0 1vw 0;
+    font-weight: 600;
+}
+
+#mapImg {
+    width: 20vw;
+}
+
+#mapChildDiv {
+    display: flex;
+    /* align-items: center; */
+    /* height: 80%; */
+}
+
+#mapFormDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#mapFormDiv div label {
+    font-size: 1vw;
+    line-height: 0;
+}
+
+.coCount {
+    width: 3vw;
+    text-align: center;
+    font-size: 1vw;
+
+    padding: 0.3vw;
+    font-size: 1vw;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+}
+
+.coInput {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    margin: 4%;
+}
+
+.coInput span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coInput span label {
+    font-weight: bold;
+    margin-bottom: 2vh;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#saveCoBtn {
+    background-color: #ffc107;
+    /* height: 5vh; */
+    width: 90%;
+    color: black;
+    /* margin-top: 2vh; */
+}

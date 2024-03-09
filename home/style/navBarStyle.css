@@ -1,0 +1,26 @@
+/* Complete Top Nav Bar */
+#navBar {
+    border-bottom: 1px solid black;
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    /* Horizontal offset, Vertical offset, Blur radius, Spread radius, Color */
+}
+
+#vespNavLogo {
+    /* width: 200px; */
+    width: 12vw;
+    /* margin: 8px; */
+    margin: 0.5vw;
+}
+  
+#navBtnsDiv {
+    align-self: center;
+}
+
+#resultBtn, #loginBtn, #homeBtn, #resultSignBtn, #mockTestBtn, #dashboardBtn {
+    margin: 8px;
+}

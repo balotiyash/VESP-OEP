@@ -1,0 +1,70 @@
+#examDetails {
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    /* width: 50%; */
+    width: 40vw;
+    /* height: 425px; */
+    height: 65vh;
+    border: 3px solid #ffc107;
+    border-radius: 3vh;
+    background-color: #feefcd;
+    color: #6d4c41;
+    /* font-family: 'Times New Roman', Times, serif; */
+    /* font-size: 3vh; */
+    padding: 25px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+#subName {
+    font-family: 'Times New Roman', Times, serif;
+    /* font-size: 4vh; */
+    /* font-size: 30px; */
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+#info, #subInfo {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Times New Roman', Times, serif;
+    /* font-size: 2.7vh; */
+    /* font-size: 22px; */
+    font-size: 1.5vw;
+}
+
+.divider {
+    border: 1px solid #ffc107;
+}
+
+#ruleTag {
+    /* font-size: 2.5vh; */
+    /* font-size: 20px; */
+    font-size: 1.2vw;
+    font-weight: bold;
+}
+
+#rules {
+    display: block;
+    text-align: left;
+    /* font-size: 2.2vh; */
+    /* font-size: 15px; */
+    font-size: 1vw;
+    padding-left: 20px;
+    line-height: 3vh;
+    margin-bottom: 10px;
+}
+
+#startExam {
+    background-color: #ffc107;
+    color: #6d4c41;
+    width: 50%;
+    /* height: 6vh; */
+    /* height: 40px; */
+    border: none;
+    border-radius: 3vh;
+    font-size: 2.5vh;
+    cursor: pointer;
+}

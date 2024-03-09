@@ -1,0 +1,46 @@
+<div id="scheduleTestDiv">
+    <h3 id="scheduleTestHeader">Schedule Mock Test</h3>
+    <div id="scheduleContents">
+        <div>
+            <img src="../../asset/images/Schedule.svg" alt="" id="scheduleImg">
+        </div>
+
+        <form action="../server/scheduleTest.php" method="post" onsubmit="return scheduleTest()" id="mainScheduleDiv">
+            <div id="">
+                <label for="selSub">Select Subject</label>
+                <select name="subject" id="selSub" required>
+                    <option value="" disabled selected>Click Here</option>
+                    <option value="mgt">MGT/MAN - Management</option>
+                    <option value="est">EST - Environmental Studies</option>
+                    <option value="bsc">BSC - Basic Science</option>
+                    <option value="asc">ASC - Applied Science</option>
+                    <option value="bee">BEE - Basic Electrical & Electronics Engineering</option>
+                    <option value="mem">MEM - Mechanical Engineering Materials</option>
+                    <option value="ajp">AJP - Advanced Java Programming</option>
+                    <option value="ete">ETE - Emerging Trends in Electronics</option>
+                    <option value="ete">ETE - Emerging Trends in Electrical Engineering</option>
+                    <option value="etc">ETC - Emerging Trends in Civil Engineering</option>
+                    <option value="eti">ETI - Emerging Trends in Computer & IT</option>
+                    <option value="etm">ETM - Emerging Trends in Mechanical Engineering</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="selDate">Select Date</label>
+                <input type="date" name="examDate" id="selDate" required>
+            </div>
+
+            <div>
+                <label for="selTime">Select Time (From - To)</label>
+                <br>
+                <div id="timeDiv">
+                    <input type="time" name="startTime" id="selStartTime" required>-<input type="time" name="endTime" id="selEndTime" required>
+                </div>
+            </div>
+            <button type="submit" class="button-17" id="scheduleBtn">Schedule Test</button>
+
+            <!-- <div>
+            </div> -->
+        </form>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<!-- To change test code -->
+<div id="changeTCDiv" >
+    <h3 id="changeTestCodeHeader">Change Test Code</h3>
+
+    <div id="changeTestCodeDiv">
+
+        <div id="imgDiv">
+            <img src="../../asset/images/TestCode.svg" alt="Image">
+        </div>
+
+        <form id="tcFormDiv" action="../server/testCode.php" method="post" onsubmit="return changeTestCode()">
+            <div>
+                <label for="currentTestCode">Enter Current Test Code</label>
+                <input type="text" name="currentTC" id="currentTestCode" placeholder="XXXX" autocomplete="off" required>
+            </div>
+            <div>
+                <label for="newTestCode1">Enter New Test Code</label>
+                <input type="text" name="newTC" id="newTestCode1" placeholder="XXXX" autocomplete="off" required>
+            </div>
+            <div>
+                <label for="newTestCode2">Confirm New Test Code</label>
+                <input type="text" name="newTestCode" id="newTestCode2" placeholder="XXXX" autocomplete="off" required>
+            </div>
+            <button class="button-17" id="changeBtn" type="submit">Change Test Code</button>
+        </form>
+    </div>
+</div>

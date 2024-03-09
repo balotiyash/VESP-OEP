@@ -1,0 +1,24 @@
+<!-- Upload Student Excel Sheet -->
+<div id="uploadDiv">
+    <h3 id="studUploadHeader">Upload CT Questions</h3>
+
+    <div id="uploadStudDiv">
+        <img src="../../asset/images/Spreadsheets.svg" alt="Image">
+
+        <form id="uploadForm" action="../server/uploadQB.php" method="post" onsubmit="return uploadData()">
+            <div>
+                <label for="selectedBranch">Selected Subject</label>
+                <input type="text" name="studBranch" id="selectedSubject" disabled readonly>
+                <input type="hidden" name="studSubjectHidden"> <!-- Hidden input field -->
+            </div>
+
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Select Excel File</label>
+                <input class="form-control" type="file" id="formFile" accept=".xlsx,.xls,.csv" name="excelFile" required>
+            </div>
+
+            <button class="button-17" id="excelFormatBtn" onclick="openExcelFormat()">Format for QB Spreadsheets</button>
+            <button class="button-17" id="fileBtn" type="submit">Upload CT Questions</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f7f7f9;
+}
+
+.navBarDiv {
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    border-bottom: 1px solid black;
+    background-color: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+#vespLogo {
+    width: 12vw;
+    margin: 0.5vw;
+}
+
+#studClassDesc {
+    margin: 0;
+    font-size: 1.5svw;
+    font-weight: bold;
+}
+
+#navBtns {
+    display: flex;
+    width: 17%;
+    justify-content: space-between;
+    font-size: 1vw;
+}
+
+#studListBtn {
+    margin-right: 2vw;
+}
+
+#studListBtn, #homeBtn {
+    font-size: 1.1vw;
+}
+
+/* .btn-light {
+    background-color: white;
+    border: none;
+    font-size: 1.1vw;
+} */
+
+/* #navBar {
+    z-index: 5;
+} */
+
+#mainPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 6vw;
+}
+
+#collectInfo {
+    width: 90vw;
+    /* height: 50vh; */
+    background-color: white;
+    border: 3px solid #ffc107;
+    border-radius: 50px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* padding: 1vh; */
+    font-size: 1vw;
+}
+
+#collectInfo label {
+    font-weight: bold;
+}
+
+#yearLabel {
+    font-size: 1.2vw;
+}
+
+#verticalDivider {
+    width: 0.1vw;
+    height: 5vh;
+    background-color: #ffc107;
+    border: none;
+}
+
+#viewResultBtn {
+    background-color: #ffc107;
+    color: black;
+    margin: 1vh;
+}
+
+.userInfoDiv input[type="number"],
+.userInfoDiv select {
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1vw;
+
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#noResultFound {
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+}
+
+#noResultFound span {
+    font-style: italic;
+
+}
+
+#noDataImg {
+    width: 45vw;
+}
+
+#studentTable {
+    /* display: none; */
+    text-align: center;
+    font-size: 1vw;
+}
+
+#studentTable td,
+#studentTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#studentTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#studentTable tr:hover {
+    background-color: #ddd;
+}
+
+#studentTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #ffc107;
+    color: #6d4c41;
+}
+
+#tableSection {
+
+    display: none;
+    margin: 2vh;
+    margin-bottom: 5vh;
+    /* width: 100vw; */
+}

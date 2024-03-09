@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../asset/images/VES-logo.png">
+    <title>VESP-OEP Results</title>
+
+    <link rel="stylesheet" href="../../home/style/buttonStyle.css">
+    <link rel="stylesheet" href="../../home/style/navBarStyle.css">
+    <link rel="stylesheet" href="../style/resultPageStyle.css">
+    <link rel="stylesheet" href="../../shared/style/devFooter.css">
+</head>
+<body>
+    <!-- Nav Bar -->
+    <header>
+        <nav id="navBar">
+            <img src="../../asset/images/VESP Logo.png" alt="VESP Logo" id="vespNavLogo">
+
+            <div id="navBtnsDiv">
+                <button class="button-17" role="button" id="homeBtn" onclick="window.location.href = '../../index.php';">Home</button>
+                <!-- <button class="button-17" role="button" id="mockTestBtn" onclick="alert('Feature Launching Soon!! Stay tuned..');">ESE Mock Test</button>
+                <button class="button-17" role="button" id="resultSignBtn">Sign in</button> -->
+            </div>
+        </nav>
+    </header>
+
+    <main id="mainPage">
+        <section>
+            <div class="userInfoDiv" id="collectInfo">
+                <div>
+                    <label for="">Enrollment No.:</label>
+                    <input type="number" id="" placeholder="Enter Enrollment Number">
+                </div>
+
+                <div>
+                    <label for="">Subject:</label>
+                    <select name="" id="">
+                        <option value="" disabled selected>Select Subject</option>
+                        <option value="">MGT/MAN - Management</option>
+                        <option value="">EST - Environmental Studies</option>
+                        <option value="">BSC - Basic Science</option>
+                        <option value="">ASC - Applied Science</option>
+                        <option value="">BEE - Basic Electrical & Electronics Engineering</option>
+                        <option value="">MEM - Mechanical Engineering Materials</option>
+                        <option value="">AJP - Advanced Java Programming</option>
+                        <option value="">ETE - Emerging Trends in Electronics</option>
+                        <option value="">ETE - Emerging Trends in Electrical Engineering</option>
+                        <option value="">ETC - Emerging Trends in Civil Engineering</option>
+                        <option value="">ETI - Emerging Trends in Computer & IT</option>
+                        <option value="">ETM - Emerging Trends in Mechanical Engineering</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="">Select CT :</label>
+                    <input type="radio" name="ctRadio" id="">
+                    <label for="" class="radioLabel">CT1</label>
+                    <input type="radio" name="ctRadio" id="">
+                    <label for="" class="radioLabel">CT2</label>
+                    <!-- <label for="">CT:</label> -->
+                </div>
+
+                <button class="button-17" id="viewResultBtn">View CT Result</button>
+            </div>
+        </section>
+
+        
+        <section>
+            <div id="resultPage">
+                <div id="noResultFound">
+                    <img src="../../asset/images/No Action Selected.svg" alt="jhhj" id="noDataImg">
+                    <p>Please enter details and click <span>'View CT Result'</span> button</p>
+                </div>
+
+                <div></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- <marquee behavior="" direction="">Note: Every action is been recorded, so be careful while performing any action.</marquee> -->
+        <p id="devInfo" style="margin: 0;">Made with <i class="fa-solid fa-heart icon-transition"></i> by <a href="#" class="transition">Yash Balotiya</a> & <a href="#" class="transition">Shreya Shukla</a>.</p>
+    </footer>
+    
+    <script src=""></script>
+</body>
+</html>
