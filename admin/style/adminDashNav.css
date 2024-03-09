@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .navBarDiv {
     position: fixed;
     display: flex;
@@ -32,6 +38,18 @@
     margin-right: 2vw;
 }
 
+#manageStaffNavBtns {
+    display: flex;
+    justify-content: space-between;
+    width: 15vw;
+    margin-right: 3vw;
+}
+
+#manageStaffInfo {
+    margin: 0;
+    font-size: 1.5svw;
+    font-weight: bold;
+}
 
 /* TO MAKE DIV SCROLLABLE */
 /* display: block;

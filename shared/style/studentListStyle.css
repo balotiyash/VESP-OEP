@@ -33,7 +33,7 @@ body {
 
 #navBtns {
     display: flex;
-    width: 17%;
+    width: 18%;
     justify-content: space-between;
     font-size: 1vw;
 }
@@ -157,7 +157,7 @@ input::-webkit-inner-spin-button {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: #ffc107;
+    background-color: #feefcd;
     color: #6d4c41;
 }
 

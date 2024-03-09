@@ -21,6 +21,12 @@ function resetActionDiv() {
 function openScheduleTest() {
     resetActionDiv();
     scheduleTestDiv.style.display = "block";
+
+    // Get today's date in YYYY-MM-DD format
+    const today = new Date().toISOString().split('T')[0];
+            
+    // Set the minimum date for the date input field
+    document.getElementById("selDate").setAttribute("min", today);
 }
 
 function openMapCO() {
@@ -55,12 +61,6 @@ function logout() {
     }
 }
 
-// Get today's date in YYYY-MM-DD format
-const today = new Date().toISOString().split('T')[0];
-        
-// Set the minimum date for the date input field
-document.getElementById("selDate").setAttribute("min", today);
-
 localStorage.setItem("dash", "../../admin/view/adminDashboard.php");
 
 function showHidePass(element) {
@@ -91,3 +91,4 @@ function showHidePass(element) {
     }
 
 }
+
