@@ -11,20 +11,6 @@
 //     }
 // });
 
-// Logout Button
-function openHomePage() {
-    let logout = confirm("Confirm Logout");
-
-    if (logout) {
-        window.history.pushState(null, '', window.location.href);
-        document.location.href = "../../index.html";
-    }
-}
-
-document.getElementById("logoutBtn").addEventListener("click", openHomePage);
-
-
-
 // window.onload = function () {
 //     document.getElementById("studentName") = studName;
 // }
@@ -74,13 +60,13 @@ document.getElementById("logoutBtn").addEventListener("click", openHomePage);
 // });
 
 
-window.onload = function() {
-    // Check if fullscreen mode is supported
-    if (document.documentElement.requestFullscreen) {
-        // Request fullscreen mode on the document element
-        document.documentElement.requestFullscreen();
-    }
-};
+// window.onload = function() {
+//     // Check if fullscreen mode is supported
+//     if (document.documentElement.requestFullscreen) {
+//         // Request fullscreen mode on the document element
+//         document.documentElement.requestFullscreen();
+//     }
+// };
 
 
 function logout() {

@@ -9,7 +9,7 @@ $endTime = $_POST["endTime"];
 if (isset($subject) && isset($examDate) && isset($startTime) && isset($endTime)) {
 
     // Check if the subject already exists in the database
-    $query = "SELECT * FROM class_test_schedule WHERE subject_name = ?";
+    $query = "SELECT * FROM class_test_details WHERE subject = ?";
     $stmt = mysqli_prepare($con, $query);
     mysqli_stmt_bind_param($stmt, "s", $subject);
     mysqli_stmt_execute($stmt);
@@ -17,7 +17,7 @@ if (isset($subject) && isset($examDate) && isset($startTime) && isset($endTime))
 
     if (mysqli_stmt_num_rows($stmt) > 0) {
         // Subject already exists, update the record
-        $updateQuery = "UPDATE class_test_schedule SET test_date = ?, test_start = ?, test_end = ? WHERE subject_name = ?";
+        $updateQuery = "UPDATE class_test_details SET exam_date = ?, start_time = ?, end_time = ? WHERE subject_name = ?";
         $updateStmt = mysqli_prepare($con, $updateQuery);
         mysqli_stmt_bind_param($updateStmt, "ssss", $examDate, $startTime, $endTime, $subject);
         mysqli_stmt_execute($updateStmt);
@@ -26,7 +26,7 @@ if (isset($subject) && isset($examDate) && isset($startTime) && isset($endTime))
         echo "Test for $subject updated successfully on $examDate";
     } else {
         // Subject does not exist, insert a new record
-        $insertQuery = "INSERT INTO class_test_schedule  VALUES (?, ?, ?, ?)";
+        $insertQuery = "INSERT INTO class_test_details (subject, exam_date, start_time, end_time)  VALUES (?, ?, ?, ?)";
         $insertStmt = mysqli_prepare($con, $insertQuery);
         mysqli_stmt_bind_param($insertStmt, "ssss", $subject, $examDate, $startTime, $endTime);
         mysqli_stmt_execute($insertStmt);

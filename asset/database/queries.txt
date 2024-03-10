@@ -229,3 +229,40 @@ CREATE TABLE ct_qb_etm (
     option_d VARCHAR(500),
     correct_answer VARCHAR(5)
 );
+
+CREATE TABLE student_exam_responce (
+    enrollment_no VARCHAR(25),
+    student_name VARCHAR(50),
+    class_test VARCHAR(5),
+    class_test_year VARCHAR(5),
+    subject VARCHAR(5),
+    question VARCHAR(500),
+    option_a VARCHAR(500),
+    option_b VARCHAR(500),
+    option_c VARCHAR(500),
+    option_d VARCHAR(500),
+    correct_answer VARCHAR(5),
+    selected_answer VARCHAR(5),
+    secured_marks VARCHAR(1)
+);
+
+CREATE TABLE student_exam_meta_data (
+    enrollment_no VARCHAR(25),
+    ip_address VARCHAR(25),
+    status VARCHAR(25),
+    remark VARCHAR(25)
+);
+
+CREATE TABLE class_test_details (
+    subject VARCHAR(100),
+    class_test VARCHAR(5),
+    exam_date DATE,
+    start_time TIME,
+    end_time TIME,
+    co1 VARCHAR(2),
+    co2 VARCHAR(2),
+    co3 VARCHAR(2),
+    co4 VARCHAR(2),
+    co5 VARCHAR(2),
+    co6 VARCHAR(2)
+);

@@ -35,12 +35,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["formFile"])) {
 
                     $srNo = isset($row[0]) ? $row[0] : '';
                     $coMap = isset($row[1]) ? $row[1] : '';
+                    $coMap = strtolower($coMap);
                     $question = isset($row[2]) ? $row[2] : '';
                     $optionA = isset($row[3]) ? $row[3] : '';
                     $optionB = isset($row[4]) ? $row[4] : '';
                     $optionC = isset($row[5]) ? $row[5] : '';
                     $optionD = isset($row[6]) ? $row[6] : '';
                     $correctAnswer = isset($row[7]) ? $row[7] : '';
+                    $correctAnswer = strtolower($correctAnswer);
 
                     mysqli_stmt_bind_param($stmt, "ssssssss", $srNo, $coMap, $question, $optionA, $optionB, $optionC, $optionD, $correctAnswer);
                     $result2 = mysqli_stmt_execute($stmt);

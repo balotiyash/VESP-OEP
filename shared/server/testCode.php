@@ -41,6 +41,24 @@
             }
         }
 
+        function verifyTestCode() {
+            $query = "SELECT * FROM exam_test_code";
+            $result = $this->con->query($query);
+    
+            if ($result && $result->num_rows == 1) {
+                $examTC = $result->fetch_assoc()["test_code"];
+                $studentTC = $_POST["studentTC"];
+
+                if ($examTC == $studentTC) {
+                    echo "examPage";
+                } else {
+                    echo "invalidTC";
+                }
+            } else {
+                echo "No test codes found.";
+            }
+        }
+
         function __destruct() {
             $this->con->close();
         }
@@ -54,6 +72,8 @@
             $obj->setTestCode();
         } elseif ($task == "fetch") {
             $obj->fetchTestCode();
+        } else if ($task == "verifyTC") {
+            $obj->verifyTestCode();
         }
     }
 ?>

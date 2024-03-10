@@ -12,7 +12,7 @@ function registerStaff() {
 
             const formData = new FormData();
             formData.append("staffName", staffName);
-            formData.append("staffDept", staffDept.value);
+            formData.append("staffDept", staffDept.value.toLowerCase());
             formData.append("staffEmail", staffEmail);
     
             const xhr = new XMLHttpRequest();

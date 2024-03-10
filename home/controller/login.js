@@ -51,7 +51,7 @@ function fetchStudentName() {
             if (this.readyState == 4 && this.status == 200) {
 
                 const response = this.responseText;
-                studentName.value = response;
+                studentName.value = response.toUpperCase();
 
                 if (response != "No entry found." && response != "Duplicate entries found." && response != "Query failed." && response != "Enrollment number not provided") {
                     studentEnrollmentNumber.disabled = true;

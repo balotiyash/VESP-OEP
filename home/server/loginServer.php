@@ -25,8 +25,8 @@ class ValidateLogin {
 
                 if ($count == 1) {
                     session_start();
-                    $_SESSION["studentSession"] = $studentName;
-                    $_SESSION["studentRoll"] = $studentRoll;
+                    $_SESSION["studentSession"] = strtolower($studentName);
+                    $_SESSION["studentRoll"] = strtolower($studentRoll);
                     $_SESSION["studentEnroll"] = $enrollmentNo;
 
                     echo $_SESSION["studentSession"];

@@ -62,7 +62,7 @@ function showHidePass(element) {
 
 function openStudentList(year) {
     localStorage.setItem("studYear", year);
-    window.location.href = "studentList.php";
+    window.location.href = "../../shared/view/studentList.php";
 }
 
 localStorage.setItem("dash", "../../staff/view/staffDashboard.php");

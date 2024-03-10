@@ -4,18 +4,18 @@ function openSubjectDetails(subject) {
     document.getElementById("examDetails").style.display = 'flex';
 
     // Get references to all subject buttons
-    let allSubjectBtns = document.querySelectorAll('.subjectBtn');
+    // let allSubjectBtns = document.querySelectorAll('.subjectBtn');
 
     // Reset background colors of all buttons and remove the 'selected' class
-    allSubjectBtns.forEach(btn => {
-        btn.style.backgroundColor = '#feefcd'; // Reset background color
-        btn.classList.remove('selected'); // Remove the 'selected' class
-    });
+    // allSubjectBtns.forEach(btn => {
+    //     btn.style.backgroundColor = '#feefcd'; // Reset background color
+    //     btn.classList.remove('selected'); // Remove the 'selected' class
+    // });
 
     // Add the 'selected' class to the clicked button and change its background color
-    let selectedBtn = document.getElementById(subject + 'Btn');
-    selectedBtn.classList.add('selected');
-    selectedBtn.style.backgroundColor = '#ffc107';
+    // let selectedBtn = document.getElementById(subject + 'Btn');
+    // selectedBtn.classList.add('selected');
+    // selectedBtn.style.backgroundColor = '#ffc107';
 
     // Get references to subject details elements
     let subjectNameElem = document.getElementById("subName");

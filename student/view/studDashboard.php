@@ -29,7 +29,7 @@
         <div id="navBarDiv">
             <img src="../../asset/images/VESP Logo.png" alt="VESP Logo" id="vespLogo">
             <div id="userDiv">
-                <p id="welcome">Welcome<p id="studentName"><?php echo $_SESSION["studentSession"]; ?></p></p>
+                <p id="welcome">Welcome<p id="studentName"><?php echo strtoupper($_SESSION["studentSession"]); ?></p></p>
             </div>
             <button class="button-17" role="button" id="studLogoutBtn" onclick="logout()">Logout</button>
         </div>
@@ -107,7 +107,7 @@
                         <!-- <input type="button" value="Exam Not Scheduled Yet" id="startExam"> -->
                         <!-- <input type="button" value="Start Exam" id="startExam" onclick="document.location.href = 'exam.html';"> -->
                         <!-- <input type="button" value="Start Exam" id="startExam"> -->
-                        <input type="button" value="Start Exam" class="button-17" id="startExam">
+                        <input type="button" value="Start Exam" class="button-17" id="startExam" onclick="navigateToExam()">
                     </div>
                 </div>
 
@@ -125,6 +125,7 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="../controller/verifyExam.js"></script>
     <script src="../controller/studDashboard.js"></script>
     <script src="../controller/subjectInfo.js"></script>
 </body>

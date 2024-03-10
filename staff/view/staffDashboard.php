@@ -28,11 +28,11 @@
     <link rel="stylesheet" href="../style/staffDashNav.css">
     <link rel="stylesheet" href="../style/staffDashboard.css">
     <link rel="stylesheet" href="../style/btnStyle.css">
-    <link rel="stylesheet" href="../style/changeTestCode.css">
+    <link rel="stylesheet" href="../../shared/style/changeTestCode.css">
     <link rel="stylesheet" href="../style/scheduleTestStyle.css">
     <link rel="stylesheet" href="../../shared/style/excelFormat.css">
     <link rel="stylesheet" href="../style/uploadStudList.css">
-    <link rel="stylesheet" href="../style/changePassword.css">
+    <link rel="stylesheet" href="../../shared/style/changePassword.css">
     <link rel="stylesheet" href="../../shared/style/devFooter.css">
 </head>
 
@@ -91,9 +91,9 @@
                     <p>No Action Selected!</p>
                 </div>
                 <?php include("scheduleTest.html"); ?>
-                <?php include("changeCode.html"); ?>
+                <?php include("../../shared/view/changeCode.html"); ?>
                 <?php include("../../shared/view/excelFormat.html"); ?>
-                <?php include("changePassword.html"); ?>
+                <?php include("../../shared/view/changePassword.html"); ?>
                 <?php include("uploadStudList.html"); ?>
             </div>
 

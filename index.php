@@ -7,6 +7,26 @@
         session_unset();
         session_destroy();
     }
+
+    // require_once "shared/server/connection.php";
+    // $query = "SELECT subject_name, test_date FROM class_test_schedule";
+    // $result = mysqli_query($con, $query);
+
+    // date_default_timezone_set('Asia/Kolkata');
+    // $today = date('Y-m-d');
+
+    // if (mysqli_num_rows($result) > 0) {
+    //     while ($row = mysqli_fetch_assoc($result)) {
+    //         if ($today > $row["test_date"]) {
+    //             $query2 = "DELETE FROM class_test_schedule WHERE subject_name = '" . $row['subject_name'] . "'";
+    //             $deleteResult = mysqli_query($con, $query2); // Use a different variable name for the result
+    //             if (!$deleteResult) {
+    //                 echo "<script>alert('Error deleting record: " . mysqli_error($con) . "');</script>";
+    //             }                
+    //         }
+    //     }
+    // }
+
 ?>
 
 <!DOCTYPE html>

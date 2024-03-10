@@ -39,8 +39,8 @@
                         continue;
                     } else {
                         // Bind parameters
-                        $uppercaseName = strtoupper($name);
-                        $uppercaseRoll = strtoupper($roll);
+                        $uppercaseName = strtolower($name);
+                        $uppercaseRoll = strtolower($roll);
                         $numericEnrollment = (int) $enroll;
                         mysqli_stmt_bind_param($stmt, "sss", $numericEnrollment, $uppercaseRoll , $uppercaseName); // bind three parameters
                         // Execute statement

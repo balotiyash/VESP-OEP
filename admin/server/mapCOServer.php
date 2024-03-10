@@ -13,7 +13,7 @@ $co6 = $_POST["co6"];
 if (isset($subject) && isset($classTest)) {
 
     // Check if the subject already exists in the database
-    $query = "SELECT * FROM class_test_cos WHERE subject_name = ?";
+    $query = "SELECT * FROM class_test_details WHERE subject = ?";
     $stmt = mysqli_prepare($con, $query);
     mysqli_stmt_bind_param($stmt, "s", $subject);
     mysqli_stmt_execute($stmt);
@@ -21,7 +21,7 @@ if (isset($subject) && isset($classTest)) {
 
     if (mysqli_stmt_num_rows($stmt) > 0) {
         // Subject already exists, update the record
-        $updateQuery = "UPDATE class_test_cos SET ct = ?, co1 = ?, co2 = ?, co3 = ?, co4 = ?, co5 = ?, co6 = ? WHERE subject_name = ?";
+        $updateQuery = "UPDATE class_test_details SET class_test = ?, co1 = ?, co2 = ?, co3 = ?, co4 = ?, co5 = ?, co6 = ? WHERE subject = ?";
         $updateStmt = mysqli_prepare($con, $updateQuery);
         mysqli_stmt_bind_param($updateStmt, "ssssssss", $classTest, $co1, $co2, $co3, $co4, $co5, $co6, $subject);
         mysqli_stmt_execute($updateStmt);
@@ -30,13 +30,13 @@ if (isset($subject) && isset($classTest)) {
         echo "COs Mapped Successfully for $subject.";
     } else {
         // Subject does not exist, insert a new record
-        $insertQuery = "INSERT INTO class_test_cos  VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $insertQuery = "INSERT INTO class_test_details  VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         $insertStmt = mysqli_prepare($con, $insertQuery);
         mysqli_stmt_bind_param($insertStmt, "ssssssss", $subject, $classTest, $co1, $co2, $co3, $co4, $co5, $co6);
         mysqli_stmt_execute($insertStmt);
         mysqli_stmt_close($insertStmt);
 
-        echo "COs Mapped Successfully for $subject.";
+        echo "COs Mapped Successfully for " . strtoupper($subject) .".";
     }
 
     mysqli_stmt_close($stmt);
