@@ -2,6 +2,7 @@
     session_start();
     $subjectCode = substr($_POST["subject"], 0,  3);
     $subjectCode = strtolower($subjectCode);
+    $enroll = $_SESSION["studentEnroll"];
 
     if (isset($_POST["task"])) {
         $task = $_POST["task"];
@@ -9,10 +10,10 @@
         if ($task == "testSchedule") {
             verifyTestTime($subjectCode);
         } else if ($task == "fetchExam") {
-            $questions = fetchExistingQuestions($subjectCode);
-            if ($questions) {
+            $ctQna = fetchExistingQuestions($subjectCode, $enroll);
+            if ($ctQna) {
                 // Return questions as JSON
-                print_r(json_encode(array("status" => "success", "questions" => $questions)));
+                echo json_encode(array("status" => "success", "ctQna" => $ctQna));
             } else {
                 echo json_encode(array("status" => "error", "message" => "No questions found."));
             }
@@ -250,7 +251,7 @@
         echo "startExam";
     }
     
-    function fetchExistingQuestions($subCode) {
+    function fetchExistingQuestions($subCode, $enroll) {
         require_once "../../shared/server/connection.php";
         $ctQuestions = $ctOptionA = $ctOptionB = $ctOptionC = $ctOptionD = $ctCorrectOption = [];
     
@@ -262,7 +263,7 @@
                 $classTest = $row['class_test'];
             }
     
-            $query2 = "SELECT * FROM student_exam_response WHERE class_test = '$classTest' AND subject = '$subCode'";
+            $query2 = "SELECT * FROM student_exam_response WHERE class_test = '$classTest' AND subject = '$subCode' AND enrollment_no = $enroll";
             $result2 = mysqli_query($con, $query2);
     
             if (mysqli_num_rows($result2) > 0) {

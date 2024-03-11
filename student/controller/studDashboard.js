@@ -75,3 +75,10 @@ function logout() {
         window.location.href = '../../index.php';
     }
 }
+
+window.onload = function() {
+    localStorage.setItem("studentAnswer", "");
+    localStorage.removeItem("attemptedTally");
+    localStorage.removeItem("reviewTally");
+    console.log(localStorage.getItem("studentAnswer"));
+}

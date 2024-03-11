@@ -47,9 +47,9 @@
                 <div id="tallyDiv">
                     <h3 id="head2">Question's Tally</h3>
                     <div id="tally">
-                        <div id="attempted">Attempted: <span>0</span></div>
-                        <div id="pending">Pending: <span>20</span></div>
-                        <div id="review">Review: <span>0</span></div>
+                        <div id="attempted">Attempted: <span id="attemptedval">0</span></div>
+                        <div id="pending">Pending: <span id="pendingval">20</span></div>
+                        <div id="review">Review: <span id="reviewval">0</span></div>
                         <div id="total">Total: 20</div>
                     </div>
                 </div>
@@ -66,22 +66,22 @@
                     <p id="questionTxt"></p>
                 </div>
 
-                <div id="ans">
-                    <input type="radio" name="answer" id="a">
-                    <label for="a" id="rad1"></label>
+                <form id="ans">
+                    <input type="radio" name="answer" id="optA">
+                    <label for="optA" id="rad1"></label>
                     <br>
-                    <input type="radio" name="answer" id="b">
-                    <label for="b" id="rad2"></label>
+                    <input type="radio" name="answer" id="optB">
+                    <label for="optB" id="rad2"></label>
                     <br>
-                    <input type="radio" name="answer" id="c">
-                    <label for="c" id="rad3"></label>
+                    <input type="radio" name="answer" id="optC">
+                    <label for="optC" id="rad3"></label>
                     <br>
-                    <input type="radio" name="answer" id="d">
-                    <label for="d" id="rad4"></label>
+                    <input type="radio" name="answer" id="optD">
+                    <label for="optD" id="rad4"></label>
                     <br><br>
-                    <input type="checkbox" id="reviewCbk">
+                    <input type="checkbox" id="reviewCbk" onclick="reviewCheckBox()">
                     <label for="reviewCbk">Mark to Review this Question Later</label>
-                </div>
+                </form>
                 
             </div>
 
@@ -102,9 +102,9 @@
                 <!-- Navigation Buttons -->
                 <p id="saveNote">Save your answers without fail.</p>
                 <div id="navBtns">
-                    <input type="button" value="Save & Next" class="navBtn" id="next">
-                    <input type="button" value="Save" class="navBtn" id="save">
-                    <input type="button" value="Previous" class="navBtn" id="back">
+                    <input type="button" value="Save & Next" class="navBtn" id="next" onclick="saveAndNext()">
+                    <input type="button" value="Save" class="navBtn" id="save" onclick="saveAnswer()">
+                    <input type="button" value="Previous" class="navBtn" id="back" onclick="previous()">
                 </div>
             </div>
         </section>
@@ -118,7 +118,10 @@
     </footer>
 
     <!-- javaScript -->
-    <script type="module" src="../controller/examTimer.js"></script>
-    <script type="module" src="../controller/examFunc.js"></script>
+    <script src="../controller/fetchQnaPhp.js"></script>
+    <script src="../controller/examFunc.js"></script>
+    <script src="../controller/button20.js"></script>
+    <script src="../controller/examTimer.js"></script>
+    <script src="../controller/examControlButton.js"></script>
 </body>
 </html>
