@@ -17,7 +17,7 @@ if (isset($subject) && isset($examDate) && isset($startTime) && isset($endTime))
 
     if (mysqli_stmt_num_rows($stmt) > 0) {
         // Subject already exists, update the record
-        $updateQuery = "UPDATE class_test_details SET exam_date = ?, start_time = ?, end_time = ? WHERE subject_name = ?";
+        $updateQuery = "UPDATE class_test_details SET exam_date = ?, start_time = ?, end_time = ? WHERE subject = ?";
         $updateStmt = mysqli_prepare($con, $updateQuery);
         mysqli_stmt_bind_param($updateStmt, "ssss", $examDate, $startTime, $endTime, $subject);
         mysqli_stmt_execute($updateStmt);

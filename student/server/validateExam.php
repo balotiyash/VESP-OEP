@@ -8,6 +8,14 @@
 
         if ($task == "testSchedule") {
             verifyTestTime($subjectCode);
+        } else if ($task == "fetchExam") {
+            $questions = fetchExistingQuestions($subjectCode);
+            if ($questions) {
+                // Return questions as JSON
+                print_r(json_encode(array("status" => "success", "questions" => $questions)));
+            } else {
+                echo json_encode(array("status" => "error", "message" => "No questions found."));
+            }
         }
     }
 
@@ -68,8 +76,8 @@
                     if ($classTest == "ct2" || $classTest == "ct1") {
                         if ($selectedAnswer == "") {
                             $completedExam = false;
-                            // fetchExistingQuestions();
-                            echo "fetchExistingQuestions";
+                            // fetchExistingQuestions($con, $classTest, $subjectCode);
+                            // echo "fetchExistingQuestions";
                             break;
                         }
                     }
@@ -79,6 +87,7 @@
                     echo "You have already attempted the exam.";
                 } else {
                     echo "startExam";
+                    // verifyExistingStudent($con, $subjectCode);
                 }
             }
         } 
@@ -240,8 +249,41 @@
         }
         echo "startExam";
     }
-
-    function fetchExistingQuestions() {
-
+    
+    function fetchExistingQuestions($subCode) {
+        require_once "../../shared/server/connection.php";
+        $ctQuestions = $ctOptionA = $ctOptionB = $ctOptionC = $ctOptionD = $ctCorrectOption = [];
+    
+        $query1 = "SELECT subject, class_test FROM class_test_details WHERE subject = '$subCode'";
+        $result1 = mysqli_query($con, $query1);
+    
+        if (mysqli_num_rows($result1) == 1) {
+            while ($row = mysqli_fetch_assoc($result1)) {
+                $classTest = $row['class_test'];
+            }
+    
+            $query2 = "SELECT * FROM student_exam_response WHERE class_test = '$classTest' AND subject = '$subCode'";
+            $result2 = mysqli_query($con, $query2);
+    
+            if (mysqli_num_rows($result2) > 0) {
+                while ($row = mysqli_fetch_assoc($result2)) {
+                    $ctQuestions[] = $row["question"];
+                    $ctOptionA[] = $row["option_a"];
+                    $ctOptionB[] = $row["option_b"];
+                    $ctOptionC[] = $row["option_c"];
+                    $ctOptionD[] = $row["option_d"];
+                    $ctCorrectOption[] = $row["correct_answer"];
+                }
+                return array(
+                    "questions" => $ctQuestions,
+                    "optionA" => $ctOptionA,
+                    "optionB" => $ctOptionB,
+                    "optionC" => $ctOptionC,
+                    "optionD" => $ctOptionD,
+                    "correctOption" => $ctCorrectOption
+                );
+            }
+        }
+        return false; // Return false if no questions found
     }
 ?>

@@ -1,3 +1,14 @@
+<?php
+    session_start();
+
+    // Check if user is logged in
+    if (!isset($_SESSION["studentSession"])) {
+        // Redirect to login page
+        header("location: ../../index.php");
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,9 +38,8 @@
                     <h3 id="head1">Student Profile</h3>
                     <!-- <div id="profileImage"></div> -->
                     <img src="../../asset/images/VES-logo.png" alt="VES" id="vesLogo">
-                    <p id="studName"><mark id="studentName"></mark></p>
-                    <p id="studName">YASH LAXMAN BALOTIYA</p>
-                    <p id="studId">CO5IA - 61</p>
+                    <p id="studName"><mark id="studentName"><?php echo strtoupper($_SESSION["studentSession"]) ?></mark></p>
+                    <p id="studId"><?php echo strtoupper($_SESSION["studentRoll"]) ?></p>
                 </div>
                 <!-- <hr><hr> -->
 
@@ -53,28 +63,7 @@
             <div id="partTwo">
                 <!-- Dynamically Fetching Questions and Answers -->
                 <div id="question">
-                    <p>1. How many ports of TCP/IP are reserved for specific protocols?</p>
-                    <!-- <p>1. Choose the Correct Output
-                        importjava.awt.event.*;
-                        import java.awt.*;
-                        importjava.applet.*;
-                        public class checkbackg extends Applet implements ItemListener {
-                            Checkbox m1,m2,m3;public void init() {
-                                m1=new Checkbox("A");m2=new Checkbox("B");
-                                m3=new Checkbox("C");add(m1);add(m2);add(m3);
-                                m1.addItemListener(this);m2.addItemListener(this);
-                            }
-                            public void itemStateChanged(ItemEventie) {
-                                if(ie.getSource()==m1)
-                                setBackground(Color.red);
-                                if(ie.getSource()==m2)
-                                setBackground(Color.green);
-                            }
-                        }
-                        /*< applet code=checkbackg.class height=150 width=150>< /applet>*/
-                    </p> -->
-                    <!-- <pre>1. Which of these exception is thrown by URL class's constructors?</pre> -->
-                    <!-- <pre id="saval"></pre> -->
+                    <p id="questionTxt"></p>
                 </div>
 
                 <div id="ans">

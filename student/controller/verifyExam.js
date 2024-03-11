@@ -1,5 +1,6 @@
 function navigateToExam() {
     let subject = document.getElementById("subCode").textContent;
+    window.localStorage.setItem("selectedSubject", subject);
     // console.log(subject)
     // let subjectCode = subject.substring(0, 3);
 

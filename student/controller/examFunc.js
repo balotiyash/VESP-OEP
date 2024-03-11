@@ -27,8 +27,6 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
-document.getElementById("studentName").innerHTML = localStorage.getItem("studName");
-
 // MCQ exam page
 let flag2 = parseInt(localStorage.getItem("flag2")) || 0;
 
@@ -44,3 +42,39 @@ let flag2 = parseInt(localStorage.getItem("flag2")) || 0;
 //         document.location.href = "../../index.html";
 //     }
 // };
+
+// function showQna(qno) {
+
+// }
+
+
+let questions, optionA, optionB, optionC, optionD, correctOption;
+    let subject = window.localStorage.getItem("selectedSubject");
+
+    window.onload = function() {
+        var xhr = new XMLHttpRequest();
+        const formData = new FormData();
+        formData.append("subject", subject);
+        formData.append("task", "fetchExam");
+
+        xhr.onreadystatechange = function() {
+            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                // Parse JSON response
+                const response = JSON.parse(this.responseText);
+                if (response.status === "success") {
+                    questions = response.questions;
+                    optionA = response.optionA;
+                    optionB = response.optionB;
+                    optionC = response.optionC;
+                    optionD = response.optionD;
+                    correctOption = response.correctOption;
+                    console.log(questions);
+                } else {
+                    alert(response.message);
+                }
+                // console.log(this.responseText);
+            }
+        };
+        xhr.open("POST", "../server/validateExam.php", true);
+        xhr.send(formData);
+    }
