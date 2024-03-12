@@ -38,11 +38,13 @@ window.onload = function() {
     }
 
     let reviewTally = localStorage.getItem("reviewTally");
-    if (reviewTally != null) {
+    if (reviewTally != null && reviewTally != "") {
+        
         reviewTally = reviewTally.split(",");
-        for (let i of reviewTally) {
-            if (i !== "") {
-                let buttonIndex = parseInt(i) - 1; // Convert index to a number
+        for (let i in reviewTally) {
+            if (reviewTally[i] != "" && reviewTally[i] != null) {
+                let buttonIndex = parseInt(i); // Convert index to a number
+                // console.log(buttonIndex);
                 document.getElementById("btn" + (buttonIndex + 1)).style.backgroundColor = "#B4D4FF";
             }
         }

@@ -47,8 +47,10 @@ function handleQuestions(ct_questions, ct_optionA, ct_optionB, ct_optionC, ct_op
         document.getElementById("btn" + (i + 1)).addEventListener("click", function() {
 
             for (let j = 1; j <= 20; j++) {
-                if (!(document.getElementById("btn" + j).style.backgroundColor === "rgb(180, 212, 255)")) {
-                    document.getElementById("btn" + j).style.backgroundColor = "#feefcd";
+                if (!(document.getElementById("btn" + j).style.backgroundColor === "rgb(180, 212, 255)") && !(document.getElementById("btn" + j).style.backgroundColor === "rgb(161, 221, 112)")) {
+                    if (studentAnswer[j] != "" || studentAnswer[j] != null) {
+                        document.getElementById("btn" + j).style.backgroundColor = "#feefcd";
+                    }
                 }
             }
             

@@ -56,6 +56,8 @@ function saveAnswer() {
     document.getElementById('attemptedval').innerHTML = attempted;
     document.getElementById("pendingval").innerHTML = (20 - attempted);
 
+    document.getElementById("btn" + (currentButton + 1)).style.backgroundColor = "#A1DD70";
+
     return true;
     // console.log(studentAnswer);
 }
@@ -80,13 +82,15 @@ function reviewCheckBox() {
 function countReviewQuestions() {
     let reviewCnt = 0;
     let reviewTally = localStorage.getItem("reviewTally");
-    if (reviewTally != null) {
-        reviewTally = reviewTally.split(',');
+    if (reviewTally != null && reviewTally != "") {
+        reviewTally = reviewTally.split(",");
         for (let j in reviewTally) {
-            if (reviewTally != null && reviewTally[j] != "") {
+            if (reviewTally[j] != null && reviewTally[j] != "") {
                 reviewCnt++;
             }
         }
+        document.getElementById("reviewval").innerHTML = reviewCnt;
+    } else {
         document.getElementById("reviewval").innerHTML = reviewCnt;
     }
 }
@@ -96,11 +100,11 @@ function saveAndNext() {
 
     if (flag) {
         if (currentButton + 1 != 20) {
-            for (let j = 1; j <= 20; j++) {
-                if (!(document.getElementById("btn" + j).style.backgroundColor === "rgb(180, 212, 255)")) {
-                    document.getElementById("btn" + j).style.backgroundColor = "#feefcd";
-                }
-            }
+            // for (let j = 1; j <= 20; j++) {
+            //     if (!(document.getElementById("btn" + j).style.backgroundColor === "rgb(180, 212, 255)") || !(document.getElementById("btn" + j).style.backgroundColor === "rgb(161, 221, 112)")) {
+            //         document.getElementById("btn" + j).style.backgroundColor = "#feefcd";
+            //     }
+            // }
             
             assignQna(currentButton + 1, questions, optionA, optionB, optionC, optionD);
             
@@ -116,7 +120,7 @@ function saveAndNext() {
 function previous() {
     if (currentButton + 1 != 1) {
         for (let j = 1; j <= 20; j++) {
-            if (!(document.getElementById("btn" + j).style.backgroundColor === "rgb(180, 212, 255)")) {
+            if (!(document.getElementById("btn" + j).style.backgroundColor === "rgb(180, 212, 255)") || !(document.getElementById("btn" + j).style.backgroundColor === "rgb(161, 221, 112)")) {
                 document.getElementById("btn" + j).style.backgroundColor = "#feefcd";
             }
         }
