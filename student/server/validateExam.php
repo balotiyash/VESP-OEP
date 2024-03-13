@@ -9,6 +9,7 @@
 
         if ($task == "testSchedule") {
             verifyTestTime($subjectCode);
+
         } else if ($task == "fetchExam") {
             $ctQna = fetchExistingQuestions($subjectCode, $enroll);
             if ($ctQna) {
@@ -17,6 +18,7 @@
             } else {
                 echo json_encode(array("status" => "error", "message" => "No questions found."));
             }
+
         }
     }
 
@@ -37,10 +39,11 @@
             $examDate = $row["exam_date"];
             $examStartTime = $row["start_time"];
             $examEndTime = $row["end_time"];
+            $ctNo = $row["class_test"];
     
             if ($today == $examDate) {
                 if ($current_time >= $examStartTime && $current_time <= $examEndTime) {
-                    verifyExistingStudent($con, $subjectCode);
+                    verifyExistingStudent($con, $subjectCode, $ctNo);
                 } else if ($current_time > $examEndTime) {
                     echo "Exam Ended!";
                 } else if ($current_time < $examStartTime) {
@@ -58,7 +61,7 @@
         }
     }    
 
-    function verifyExistingStudent($con, $subjectCode) {
+    function verifyExistingStudent($con, $subjectCode, $ctNo) {
         if (isset($_SESSION["studentEnroll"])) {
             $enrollmentNo = $_SESSION["studentEnroll"];
             $query1 = "SELECT class_test, selected_answer FROM student_exam_response WHERE enrollment_no = ?";
@@ -67,9 +70,12 @@
             mysqli_stmt_execute($stmt);
             mysqli_stmt_store_result($stmt);
     
-            if (mysqli_stmt_num_rows($stmt) == 0) {
+            if (mysqli_stmt_num_rows($stmt) == 0 && strtolower($ctNo) == "ct1") {
                 fetchNewQuestions($con, $subjectCode);
                 // echo "startExam";
+            } else if (mysqli_stmt_num_rows($stmt) == 20 && strtolower($ctNo) == "ct2") {
+                fetchNewQuestions($con, $subjectCode);
+
             } else {
                 mysqli_stmt_bind_result($stmt, $classTest, $selectedAnswer); // Bind result variables
                 while (mysqli_stmt_fetch($stmt)) {
@@ -253,17 +259,20 @@
     
     function fetchExistingQuestions($subCode, $enroll) {
         require_once "../../shared/server/connection.php";
-        $ctQuestions = $ctOptionA = $ctOptionB = $ctOptionC = $ctOptionD = $ctCorrectOption = [];
+        $ctQuestions = $ctOptionA = $ctOptionB = $ctOptionC = $ctOptionD = [];
     
         $query1 = "SELECT subject, class_test FROM class_test_details WHERE subject = '$subCode'";
         $result1 = mysqli_query($con, $query1);
-    
+        $classTest = null;
+
         if (mysqli_num_rows($result1) == 1) {
             while ($row = mysqli_fetch_assoc($result1)) {
                 $classTest = $row['class_test'];
             }
     
-            $query2 = "SELECT * FROM student_exam_response WHERE class_test = '$classTest' AND subject = '$subCode' AND enrollment_no = $enroll";
+            $classTest = strtolower($classTest);
+
+            $query2 = "SELECT * FROM student_exam_response WHERE class_test = '$classTest' AND subject = '$subCode' AND enrollment_no = '$enroll'";
             $result2 = mysqli_query($con, $query2);
     
             if (mysqli_num_rows($result2) > 0) {
@@ -273,15 +282,14 @@
                     $ctOptionB[] = $row["option_b"];
                     $ctOptionC[] = $row["option_c"];
                     $ctOptionD[] = $row["option_d"];
-                    $ctCorrectOption[] = $row["correct_answer"];
+                    // $ctCorrectOption[] = $row["correct_answer"];
                 }
                 return array(
                     "questions" => $ctQuestions,
                     "optionA" => $ctOptionA,
                     "optionB" => $ctOptionB,
                     "optionC" => $ctOptionC,
-                    "optionD" => $ctOptionD,
-                    "correctOption" => $ctCorrectOption
+                    "optionD" => $ctOptionD
                 );
             }
         }

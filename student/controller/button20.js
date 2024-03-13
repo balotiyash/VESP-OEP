@@ -1,19 +1,3 @@
-// Retrieve selectedAnswer from localStorage
-let selectedAnswer = localStorage.getItem("studentAnswer");
-let studentAnswer = [];
-
-// Check if selectedAnswer exists and is not an empty array
-if (selectedAnswer !== "") {
-    // Split the string into an array
-    // console.log(selectedAnswer);
-    studentAnswer = selectedAnswer.split(",");
-    // console.log(studentAnswer);
-} else {
-    // If selectedAnswer doesn't exist or is an empty array, initialize studentAnswer as an empty array
-    studentAnswer = [];
-    // console.log(studentAnswer);
-}
-
 let currentButton = 0;
 
 let radioBtn1 = document.getElementById("optA");
@@ -27,30 +11,29 @@ let radioLbl3 = document.getElementById("rad3");
 let radioLbl4 = document.getElementById("rad4");
 
 
-let questions, optionA, optionB, optionC, optionD, correctOption;
-function handleQuestions(ct_questions, ct_optionA, ct_optionB, ct_optionC, ct_optionD, ct_correctOption) {
+let questions, optionA, optionB, optionC, optionD;
+function handleQuestions(ct_questions, ct_optionA, ct_optionB, ct_optionC, ct_optionD) {
     questions = ct_questions;
     optionA = ct_optionA;
     optionB = ct_optionB;
     optionC = ct_optionC;
     optionD = ct_optionD;
-    correctOption = ct_correctOption;
-    
 
     document.getElementById("btn1").style.backgroundColor = "#ffc107";
     
-    deleteReviewCount();
+    // deleteReviewCount();
     assignQna(0, questions, optionA, optionB, optionC, optionD);
-    countReviewQuestions();
+    // countReviewQuestions();
 
     for (let i = 0; i < 20; i++) {
         document.getElementById("btn" + (i + 1)).addEventListener("click", function() {
-
+            reviews = localStorage.getItem("reviewTally");
             for (let j = 1; j <= 20; j++) {
-                if (!(document.getElementById("btn" + j).style.backgroundColor === "rgb(180, 212, 255)") && !(document.getElementById("btn" + j).style.backgroundColor === "rgb(161, 221, 112)")) {
-                    if (studentAnswer[j] != "" || studentAnswer[j] != null) {
-                        document.getElementById("btn" + j).style.backgroundColor = "#feefcd";
-                    }
+                // if (document.getElementById("btn" + j).style.backgroundColor !== "rgb(180, 212, 255)") {
+                if (document.getElementById("btn" + j).style.backgroundColor !== "rgb(161, 221, 112)") {
+                    document.getElementById("btn" + j).style.backgroundColor = "#feefcd";
+                    document.getElementById("btn" + j).style.border = "2px solid #ffc107";
+                    makeButtonGreen();
                 }
             }
             
@@ -60,6 +43,7 @@ function handleQuestions(ct_questions, ct_optionA, ct_optionB, ct_optionC, ct_op
 
             deleteReviewCount();
             countReviewQuestions();
+            makeButtonBlue();
         });
     }
 }
@@ -98,15 +82,55 @@ function assignQna(index, questions, optionA, optionB, optionC, optionD) {
 
 function deleteReviewCount() {
     let reviewTally = localStorage.getItem("reviewTally");
-    if (reviewTally != null) {
-        reviewTally = localStorage.getItem("reviewTally").split(',');
-    }
-    // console.log(reviewTally);
-    for (let j in reviewTally) {
-        if (reviewTally[j] == currentButton + 1) {
-            delete reviewTally[j];
+    if (reviewTally != null && reviewTally != "") {
+        reviewTally = reviewTally.split(",");
+        
+        for (let j in reviewTally) {
+            if (reviewTally[j] != null && reviewTally[j] != "null" && reviewTally[j] != "") {
+                // console.log("yash")
+                if (reviewTally[j] == currentButton + 1) {
+                    delete reviewTally[j];
+                }
+            }
         }
+        
+        delete reviewLater[currentButton];
+        localStorage.setItem("reviewTally", reviewTally);
+    }
+}
+
+function makeButtonGreen() {
+    let studentAns = localStorage.getItem("studentAnswer");
+    let reviews = localStorage.getItem("reviewTally");
+    
+    if (reviews != null && reviews != "") {
+        reviews = reviews.split(",");//.map(item => parseInt(item)); // Parse to integers
     }
 
-    localStorage.setItem("reviewTally", reviewTally);
+    if (studentAns != null && studentAns != "") { // Check if studentAns is not empty
+        studentAns = studentAns.split(",");
+        for (let i in studentAns) {
+            if (studentAns[parseInt(i)] != "" && studentAns[parseInt(i)] != null) { // Checking for empty or null values
+                // if (reviews && reviews[parseInt(i)] != parseInt(i) + 1) { // Check if reviews exists and index is not the current button
+                    document.getElementById("btn" + (parseInt(i) + 1)).style.backgroundColor = "#A1DD70";
+                    document.getElementById("btn" + (parseInt(i) + 1)).style.border = "2px solid #0D9276";
+                // }
+            }
+        }
+    }
+}
+
+
+function makeButtonBlue() {
+    // console.log(typeof(reviews))
+    let reviews = localStorage.getItem("reviewTally");
+    if (reviews != null && reviews != "") {
+        reviews = reviews.split(",");
+        for (let i in reviews) {
+            if (reviews[parseInt(i)] != "" && reviews[parseInt(i)] != null) {
+                document.getElementById("btn" + (parseInt(i) + 1)).style.backgroundColor = "#B4D4FF"; // Corrected color to blue
+                document.getElementById("btn" + (parseInt(i) + 1)).style.border = "2px solid #0C359E"; // Corrected color to blue
+            }
+        }
+    }
 }

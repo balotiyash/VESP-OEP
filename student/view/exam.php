@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $_SESSION["studentExam"] = true;
 
     // Check if user is logged in
     if (!isset($_SESSION["studentSession"])) {
@@ -55,7 +56,7 @@
                 </div>
                 <div id="endBtnDiv">
                     <!-- <input type="button" value="End Exam" id="endBtn"> -->
-                    <button class="button-17" role="button" id="endExamBtn">End Exam</button>
+                    <button class="button-17" role="button" id="endExamBtn" onclick="endExam()">End Exam</button>
                 </div>
             </div>
 

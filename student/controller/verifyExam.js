@@ -32,7 +32,8 @@ function verifyTestCode(testCode) {
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             if (this.responseText == "examPage") {
-                window.location.href = "../view/exam.php";
+                // window.location.href = "../view/exam.php";
+                window.open("../view/exam.php", "_blank");
             } else if (this.responseText == "invalidTC") {
                 alert("Invalid Test Code Entered!");
             } else {
