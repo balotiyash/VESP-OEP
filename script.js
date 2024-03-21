@@ -1,7 +1,7 @@
 // NAVBAR
 // result button
 document.getElementById("resultBtn").addEventListener("click", function() {
-    window.location.href = "student/view/resultPage.html";
+    window.location.href = "student/view/resultPage.php";
 });
 document.getElementById("mockTestBtn").addEventListener("click", function() {
     alert("Feature Launching Soon!! Stay tuned..");

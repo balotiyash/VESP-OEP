@@ -6,6 +6,7 @@ const registerStaffDiv = document.getElementById("regStaffParentDiv");
 const scheduleTestDiv = document.getElementById("scheduleTestDiv");
 const noActionDiv = document.getElementById("noActionDiv");
 const uploadQB = document.getElementById("uploadDiv");
+const downloadResultsDiv = document.getElementById("downloadResultDiv");
 
 function resetActionDiv() {
     changeTestCodeDiv.style.display = "none";
@@ -16,6 +17,7 @@ function resetActionDiv() {
     scheduleTestDiv.style.display = "none";
     noActionDiv.style.display = "none";
     uploadQB.style.display = "none";
+    downloadResultsDiv.style.display = "none";
 }
 
 function openScheduleTest() {

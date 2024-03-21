@@ -20,29 +20,6 @@ function openHomePage() {
     window.location.href = localStorage.getItem("dash");
 }
 
-// function fetchStudentList(branch) {
-//     document.getElementById("resultPage").style.display = "none";
-//     document.getElementById("studentTable").style.display = "block";
-//     const tableName = window.localStorage.getItem("studYear") + '_' + branch + '_students';
-//     const formData = new FormData();
-//     formData.append("tableName", tableName);
-
-//     const xhr = new XMLHttpRequest();
-//     xhr.onreadystatechange = function() {
-//         if (this.readyState === 4) {
-//             if (this.status === 200) {
-//                 const response = this.responseText;
-//                 // handleResponse(response);
-//                 alert(response);
-//             } else {
-//                 alert("Error: " + this.statusText);
-//             }
-//         }
-//     };
-//     xhr.open("POST", "../view/studentList.php");
-//     xhr.send(formData);
-// }
-
 function fetchStudentList(branch) {
     let year = window.localStorage.getItem("studYear");
 
@@ -100,4 +77,28 @@ function fetchStudentEnroll() {
     };
     xhr.open("POST", "../server/fetchStudentList.php");
     xhr.send(formData);
+}
+
+function resetStudentExam(enrollmentNo) {
+    const confirmReset = confirm(`Are you sure, you want to reset '${enrollmentNo}'?`);
+
+    if (confirmReset) {
+        const formData = new FormData();
+        formData.append("task", "resetStud");
+        formData.append("enroll", enrollmentNo);
+    
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState === 4) {
+                if (this.status === 200) {
+                    const response = this.responseText;
+                    alert(response);
+                } else {
+                    alert("Error: " + this.statusText);
+                }
+            }
+        };
+        xhr.open("POST", "../server/fetchStudentList.php");
+        xhr.send(formData);
+    }
 }

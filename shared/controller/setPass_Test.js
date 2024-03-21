@@ -40,6 +40,29 @@ function changeTestCode() {
     }
 }
 
+setInterval(function() {
+    randomNumber = Math.floor(Math.random() * 1000000);
+
+    var formData = new FormData();
+    formData.append("task", "change");
+    formData.append("newTestCode", randomNumber);
+
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // alert(this.responseText);
+            document.getElementById("tcFormDiv").reset();
+            // Update the test code in the HTML without reloading
+            document.getElementById("testCode").innerHTML = randomNumber;
+        }
+    };
+    xhr.open("POST", "../../shared/server/testCode.php", true);
+    xhr.send(formData);
+
+    return false;
+
+}, (1000 * 60 * 15));
+
 function fetchTestCode()  {
     var formData = new FormData();
         formData.append("task", "fetch");

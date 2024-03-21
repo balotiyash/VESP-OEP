@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="../style/btnStyle.css">
     <link rel="stylesheet" href="../style/mapCOStyle.css">
     <link rel="stylesheet" href="../style/registerStaff.css">
-    <link rel="stylesheet" href="../style/changeTestCode.css">
+    <link rel="stylesheet" href="../../shared/style/changeTestCode.css">
     <link rel="stylesheet" href="../style/scheduleTestStyle.css">
     <link rel="stylesheet" href="../../shared/style/excelFormat.css">
     <link rel="stylesheet" href="../../shared/style/changePassword.css">
@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="../style/uploadQuestionList.css">
     <!-- <link rel="stylesheet" href="../../shared/style/studentListStyle.css"> -->
     <link rel="stylesheet" href="../../shared/style/devFooter.css">
+    <link rel="stylesheet" href="../style/downloadResults.css">
 </head>
 <body>
     <header>
@@ -92,16 +93,17 @@
                     <img src="../../asset/images/No Action Selected.svg" alt="" id="noActionImg">
                     <p>No Action Selected!</p>
                 </div>
+                
                 <?php include("scheduleTest.html"); ?>
                 <?php include("mapCO.html"); ?>
-                <?php include("registerStaff.html"); ?>
-                <?php include("../../shared/view/excelFormat.html"); ?>
                 <?php include("uploadQuestionList.html"); ?>
+                <?php include("../../shared/view/excelFormat.html"); ?>
+                <?php include("registerStaff.html"); ?>
                 <?php include("../../shared/view/changePassword.html"); ?>
-                <?php include("changeCode.html"); ?>
-                
+                <?php include("../../shared/view/changeCode.html"); ?>
+                <?php include("downloadResults.html"); ?>
             </div>
-                
+
             <div id="activeSession">
                 <p>Active Sessions</p>
             </div>
@@ -121,6 +123,7 @@
     <script src="../controller/registerStaff.js"></script>
     <script src="../../shared/controller/displayStudentList.js"></script>
     <script src="../controller/uploadCTQuestions.js"></script>
+    <script src="../controller/downloadResults.js"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.4/xlsx.full.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

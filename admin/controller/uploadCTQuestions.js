@@ -6,8 +6,8 @@ function uploadQuestionsList(subject) {
 
     uploadQB.style.display = "block";
 
-    const selectedSubject = document.getElementById("selectedSubject");
-    const selectedSubjectHidden = document.getElementsByName("selectedSubjectHidden");
+    let selectedSubject = document.getElementById("selectedSubject");
+    let selectedSubjectHidden = document.getElementsByName("selectedSubjectHidden");
 
     switch (subject) {
         case "mgt":

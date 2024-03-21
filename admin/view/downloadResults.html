@@ -1,0 +1,27 @@
+<div id="downloadResultDiv">
+    <h3 id="">Download Class Test Results</h3>
+    <div id="downloadChildDiv">
+        <img src="../../asset/images/result.svg" alt="" id="resultImage">
+
+        <form onsubmit="return downloadResults()" id="tcFormDiv">
+            <div>
+                <label for="selectedSubjectResult">Selected Subject</label>
+                <input type="text" id="selectedSubjectResult" disabled>
+                <input type="hidden" id="selectedSubjectHiddenResult">
+            </div>
+            <div id="">
+                <label for="selCTResult">Select Class Test</label>
+                <select id="selCTResult" onchange="" required class="selectTag">
+                    <option value="" selected disabled>Select Class Test</option>
+                    <option value="ct1">CT1 - Class Test 1</option>
+                    <option value="ct2">CT2 - Class Test 2</option>
+                </select>
+            </div>
+            <div>
+                <label for="selMonth">Select Date</label>
+                <input type="month" name="examDate" id="selMonthInput" required>
+            </div>
+            <button class="button-17" id="downloadBtn" type="submit">Download Results</button>
+        </div>
+    </div>
+</div>

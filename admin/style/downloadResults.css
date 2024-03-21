@@ -1,0 +1,38 @@
+#downloadResultDiv {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+#downloadChildDiv {
+    display: flex;
+    align-items: center;
+    height: 80%;
+}
+
+#resultImage {
+    width: 50%;
+    height: 100%;
+}
+
+#selCTResult {
+    width: 17vw;
+}
+
+#tcFormDiv {
+    height: 100%;
+    /* line-height: 1vh; */
+}
+
+#selMonthInput {
+    height: 2.5vw;
+}
+
+#downloadBtn {
+    background-color: #ffc107;
+    color: black;
+}
+
+#selectedSubjectResult {
+    height: 2.5vw;
+}
